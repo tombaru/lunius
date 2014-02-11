@@ -1,0 +1,31 @@
+<h1>Products</h1>
+<table>
+
+  <tbody>
+      <tr>
+        <td>Наименование       </td>
+        <td>Прайс   </td>
+        <td> </td>
+        <td> </td>
+     
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+
+      <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td> </td>
+        <td> </td>
+
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
