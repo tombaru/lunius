@@ -1,4 +1,4 @@
-ActiveAdmin.register Product do
+ActiveAdmin.register Category do
 
   
   # See permitted parameters documentation:
@@ -9,7 +9,7 @@ ActiveAdmin.register Product do
   # or
   #
   permit_params do
-    [:name, :price, :category_id]
+    [:title]
   end
   
 end

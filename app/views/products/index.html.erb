@@ -5,7 +5,7 @@
       <tr>
         <td>Наименование       </td>
         <td>Прайс   </td>
-        <td> </td>
+        <td> Категория</td>
         <td> </td>
      
         <td> Подробнее</td>
@@ -17,7 +17,11 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.price %></td>
-        <td> </td>
+        <td>
+        <% if product.category %>
+        <%= product.category.title %>
+        <% end %>
+        </td>
         <td> </td>
 
         <td><%= link_to 'Show', product %> </td>
