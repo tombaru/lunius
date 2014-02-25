@@ -9,7 +9,8 @@ ActiveAdmin.register Product do
   # or
   #
   permit_params do
-    [:name, :price, :category_id]
+    [:name, :price, :category_id, :photo]
   end
-  
+
+ 
 end

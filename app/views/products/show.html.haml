@@ -1,0 +1,20 @@
+%table
+  %tbody
+    %tr
+      %td Наименование
+      %td Прайс
+      %td Категории     
+      %td       
+      %td      
+      %td       
+      %td    
+      %tr
+      %td= @product.name
+      %td= @product.price
+      %td= @product.category.title   
+      %td       
+      %td       
+      %td       
+      %td 
+      %br
+= link_to 'Back', products_path
