@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
   def index
     @products = Product.all
+    @categories = Category.all
   end
 
   def show

@@ -9,7 +9,8 @@ Lunius::Application.routes.draw do
   root 'products#index'
   #root to: 'products#index'
 
-  resources :products
+  resources :products 
+  resources :categories 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
