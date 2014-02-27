@@ -1,24 +1,12 @@
-%h1 Products
+%h1
+  %center Добро пожаловать 
 %table
   %tbody
     %tr
-      %td Наименование
-      %td Прайс
-      %td Категория
-      %td Изображение     
-      %td Подробнее
-      %td       
-      %td  
-      - @products.each do |product|
-        %tr
-          %td= product.name
-          %td= product.price
-          %td
-            - if product.category
-              = product.category.title
-          %td= image_tag product.photo.url(:thumb)    
-          %td
-            = link_to 'Show', product
-          %td         
-          %td 
-          %br/
+    - @products.each do |product|
+      %td
+        = image_tag product.photo.url(:thumb)
+        = link_to product.name, product
+        = link_to product.price, product 
+             
+

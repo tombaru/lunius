@@ -55,6 +55,7 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    chunky_png (1.2.7)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -62,6 +63,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -72,6 +79,7 @@ GEM
     execjs (2.0.2)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
+    fssm (0.2.9)
     haml (4.0.5)
       tilt
     has_scope (0.6.0.rc)
@@ -173,6 +181,7 @@ DEPENDENCIES
   activeadmin!
   carrierwave
   coffee-rails (~> 4.0.0)
+  compass-rails
   haml
   jbuilder (~> 1.2)
   jquery-rails

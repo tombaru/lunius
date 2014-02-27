@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title Lunius
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    #centered
+      %header
+        header test text
+      %nav
+        %ul
+          %li= link_to 'Оплата и доставка', '/'
+          %li= link_to "Гарантии"
+          %li= link_to "Контакты"
+          %li= link_to "О магазине"
+      #content
+        .left_menu
+          %ul
+            - @categories.each do |category|
+              %li
+                = link_to category.title, category_path(category)
+        .products
+          = yield
+
+      %footer
+        text footer
+
+
