@@ -1,4 +1,8 @@
 Lunius::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   get "products/index"
   ActiveAdmin.routes(self)
 

@@ -18,7 +18,7 @@
       #content
         .left_menu
           %ul
-            - @categories.each do |category|
+            - Category.all.each do |category|
               %li
                 = link_to category.title, category_path(category)
         .products
