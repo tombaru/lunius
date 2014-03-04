@@ -17,6 +17,8 @@
           %li= link_to "О магазине"
       #content
         .left_menu
+          #cart
+          = render @cart
           %ul
             - Category.all.each do |category|
               %li
@@ -26,5 +28,6 @@
 
       %footer
         text footer
+
 
 
