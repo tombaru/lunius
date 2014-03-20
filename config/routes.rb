@@ -15,7 +15,10 @@ Lunius::Application.routes.draw do
   root 'products#index'
   #root to: 'products#index'
 
-  resources :products 
+  resources :products do
+    get :who_bought, on: :member
+  end
+
   resources :categories 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
