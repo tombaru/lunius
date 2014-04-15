@@ -19,6 +19,8 @@ gem 'sass-rails', '~> 4.0.0'
 
 gem 'compass-rails'
 
+gem 'kaminari'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -42,7 +44,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'will_paginate', '~> 3.0'
+# gem 'will_paginate', '~> 3.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

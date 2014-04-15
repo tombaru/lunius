@@ -1,8 +1,7 @@
 %table
   %tbody
     %tr
-    - @products.each do |product|
-      %td= image_tag product.photo.url(:thumb)
+      %td= image_tag @product.photo.url(:thumb)
       %td
         = @product.name
         = @product.price 

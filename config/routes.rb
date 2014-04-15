@@ -20,6 +20,8 @@ Lunius::Application.routes.draw do
   end
 
   resources :categories 
+
+  resources :news 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

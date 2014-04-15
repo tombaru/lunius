@@ -1,6 +1,7 @@
 .products
   %h1
     %center Добро пожаловать 
+  = paginate @products
   %table
     %tbody
       %tr
@@ -11,6 +12,8 @@
           = link_to product.price, product 
           .price_line
           %span.price= number_to_currency(product.price)
+
           = button_to 'В корзину', line_items_path(product_id: product) 
+  = paginate @products 
              
 

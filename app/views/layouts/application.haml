@@ -8,23 +8,58 @@
   %body
     #centered
       %header
-        header test text
-      %nav
+        .telephone
+          %img{alt: "online", height: "22px", s: "", src: "/images/telephone.png"}/
+          %span 8-911-829-69-54
+
+        .logo        
+          %img{alt: "online", height: "165px", s: "", src: "/images/logo.jpg"}/
+          %h1 Интернет магазин необычных и оригинальных подарков
+
+      %nav.menu
         %ul
-          %li= link_to 'Оплата и доставка', '/'
+          %li= link_to 'Оплата и доставка', '/' 
           %li= link_to "Гарантии"
           %li= link_to "Контакты"
           %li= link_to "О магазине"
+        .right_order
+          %img{alt: "order", height: "27px", s: "", src: "/images/order_cart.png"}/
+          %span Корзина
+          %img{alt: "order", height: "39px", s: "", src: "/images/order_sale.png"}/
       #content
         .left_menu
           %ul
             - Category.all.each do |category|
               %li
-                = link_to category.title, category_path(category)
+                = link_to category.title, category_path(category) 
+               
         = yield
 
-      %footer
-        text footer
+        .right_menu
+          .selection
+            %span Подбор подарка
+          .search
+            %span Поиск
+          .news
+            %span Новости
+            %ul
+              - News.all.each do |news|
+                %li
+                  = link_to news.publish_add, news_path(news)               
+                %li
+                  = link_to news.title, news_path(news) 
+                %li
+                  = link_to news.body, news_path(news) 
+
+
+    %footer
+      %ul
+        %li= link_to 'Оплата и доставка', '/'
+        %li= link_to "Гарантии"
+        %li= link_to "Контакты"
+        %li= link_to "О магазине"
+        %span (с)2014 Все права защищены.
+        Копирование информацию с сайта запрещено.
 
 
 

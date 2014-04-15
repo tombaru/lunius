@@ -4,12 +4,12 @@ class ProductsController < ApplicationController
     @products = Product.all
     @categories = Category.all
     @cart = current_cart
+    @products = Product.order("name").page(params[:page]).per(6)
   end
 
   def show
     @categories = Category.all
     @category = Category.find(params[:id])
-    @products = @category.products
   end
 
   def who_bought
@@ -25,6 +25,8 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
+      Rails.logger.info @product.photo
+      Rails.logger.info "=================="
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,11 @@
+.news
+  %h1
+    %center News 
+  %table
+    %tbody
+      %tr
+      - @news.each do |news|
+        %td
+          = link_to news.title, news
+          = link_to news.body, news 
+
