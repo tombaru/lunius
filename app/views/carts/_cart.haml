@@ -1,0 +1,26 @@
+#cart
+	- unless cart.line_items.empty?
+		.cart_title
+			= link_to '<< Вернуться к покупкам', line_items_path
+			%span 
+				Моя корзина
+		%table
+			%tr
+				%th
+				%th Наименование
+				%th Цена 
+				%th Количество
+				%th Стоимость
+			= render (cart.line_items)
+			%tr
+				%td.back_link_container= link_to '← Вернуться к покупкам', line_items_path
+				%td.back_link_container
+				%td.back_link_container
+				%td.back_link_container
+				%td.back_link_container= link_to'Очистить корзину', @cart, method: :delete, confirm: 'Очистить корзину?'
+			%tr.total_line
+				%td{colspan: "4"} ИТОГО:
+				%td.total_cell= number_to_currency(@cart.total_price)
+
+		= button_to 'Оформить', new_order_path, method: :get
+

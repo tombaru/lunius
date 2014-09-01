@@ -1,0 +1,12 @@
+- if line_item == @current_item
+	%tr#current_item
+- else
+	%tr.total
+		%td= image_tag line_item.product.photo.url(:thumb)
+		%td= line_item.product.name
+		%td= line_item.product.price
+		%td
+			= form_for(line_item) do |f|
+				= f.number_field :quantity
+				= f.submit "Пересчитать", :type => :image, height: "24px", :src => "/images/button_repeat.png"
+		%td.item_price= number_to_currency(line_item.total_price) 
