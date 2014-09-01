@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 gem 'haml'
 
 gem 'carrierwave'
+gem 'quiet_assets', group: :development
 
 gem 'mini_magick'
 
