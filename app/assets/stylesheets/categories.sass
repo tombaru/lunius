@@ -1,3 +1,75 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.middle
+	.category
+		box-sizing: border-box
+		max-width: 590px
+		float: left
+		margin: 0 0 0 10px 
+		text-align: left
+
+		ul
+			display: block
+			padding: 0
+			list-style: none
+			float: left
+			margin: 0, auto
+
+			li
+				list-style: none
+				text-decoration: none
+				font-family: sans-serif
+				font-size: 12px
+				vertical-align: top	
+
+		table
+
+			padding: 10px
+			tr
+				td
+					width: 180px
+					float: left
+					align: center 
+					valign: middle
+					min-height: 300px
+					tr
+						td
+
+.left_menu
+
+	box-sizing: border-box
+	width: 20%
+	max-width: 180px
+	float: left		
+	margin: 10px 0 0 10px
+	
+
+	ul
+		list-style: none
+		padding-left: 0
+		margin: 0
+		overflow: hidden
+		background: #a500c1
+		border-bottom: 2px solid #A50070
+		border-radius: 2px			
+
+		li
+			float: left
+			padding: 5px 10px /* Поля вокруг текста */
+			width: 180px
+			border-bottom: 1px solid #A500E0	
+
+			&:last-child
+				margin: 0
+			&:hover
+				background: #A50070
+
+			a	
+				color: white
+				text-decoration: none
+				font-weight: bold
+				font-family: sans-serif
+				font-size: 13px
+				vertical-align: top

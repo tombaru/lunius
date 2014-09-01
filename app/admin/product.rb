@@ -8,8 +8,25 @@ ActiveAdmin.register Product do
   #
   # or
   #
+     form do |f|
+        f.inputs do
+        f.inputs
+          f.has_many :photos do |ff|
+            ff.input :photo
+          end
+        end
+     f.actions
+     end
+
+   controller do
+     def permitted_params
+       params.permit(:products => [:name, :price, :category_id, :photo, :photos])
+     end
+   end
+
+
   permit_params do
-    [:name, :price, :category_id, :photo]
+    [:name, :price, :category_id, :photo, :photos]
   end
 
  

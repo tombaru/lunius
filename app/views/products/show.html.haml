@@ -1,21 +1,34 @@
-%table
-  %tbody
-    %tr
-      %td= image_tag @product.photo.url(:thumb)
-      %td
-        = @product.name
-        = @product.price 
-      %td     
-      %td       
-      %td      
-      %td       
-      %td    
-      %tr
-      %td
-      %td
-      %td  
-      %td       
-      %td       
-      %td       
-      %td 
-= link_to 'Назад', products_path
+.middle
+	.product_params
+		%table
+			%tbody
+				%tr
+					%th{colspan: "5"}
+						= @product.name
+				%tr
+					%td.big_img{rowspan: "5"} 
+						= image_tag @product.photo.url(:thumb) 
+					%td.totalprice
+						= @product.price 
+						= "руб."
+
+				%tr
+					%td Материал:
+					%td каучук
+				%tr
+					%td Размер:
+					%td	18  5  5 см			
+				%tr
+					%td Вес:
+					%td 200 г
+				%tr
+					%td Возраст:
+					%td от 8 лет 
+
+				- @product.photos.each do |photo|
+					%td= image_tag photo.photo.url(:thumb)
+
+		= button_to 'В корзину', line_items_path(product_id: @product) 
+		 
+		= link_to 'Назад', products_path
+

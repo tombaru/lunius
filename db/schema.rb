@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415115907) do
+ActiveRecord::Schema.define(version: 20140725120748) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140415115907) do
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quantity",   default: 1
+    t.integer  "quantity",   default: 1, null: false
     t.integer  "order_id"
   end
 

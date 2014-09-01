@@ -12,9 +12,9 @@
           %img{alt: "online", height: "22px", s: "", src: "/images/telephone.png"}/
           %span 8-911-829-69-54
 
-        .logo        
-          %img{alt: "online", height: "165px", s: "", src: "/images/logo.jpg"}/
-          %h1 Интернет магазин необычных и оригинальных подарков
+        .logo   
+          %h1 Интернет магазин необычных и оригинальных подарков 
+          
 
       %nav.menu
         %ul
@@ -25,6 +25,8 @@
         .right_order
           %img{alt: "order", height: "27px", s: "", src: "/images/order_cart.png"}/
           %span Корзина
+          %p кол-во тов. - 0
+          %p сумма - 0
           %img{alt: "order", height: "39px", s: "", src: "/images/order_sale.png"}/
       #content
         .left_menu
@@ -32,6 +34,8 @@
             - Category.all.each do |category|
               %li
                 = link_to category.title, category_path(category) 
+          .social
+            %span Мы в соцсетях:
                
         = yield
 
@@ -45,11 +49,13 @@
             %ul
               - News.all.each do |news|
                 %li
-                  = link_to news.publish_add, news_path(news)               
+                  #{news.publish_add}               
                 %li
                   = link_to news.title, news_path(news) 
                 %li
                   = link_to news.body, news_path(news) 
+          .accept
+            %span Мы принимаем к оплате
 
 
     %footer
@@ -58,8 +64,8 @@
         %li= link_to "Гарантии"
         %li= link_to "Контакты"
         %li= link_to "О магазине"
-        %span (с)2014 Все права защищены.
-        Копирование информацию с сайта запрещено.
+      %span (с)2014 Все права защищены.
+      Копирование информацию с сайта запрещено.
 
 
 

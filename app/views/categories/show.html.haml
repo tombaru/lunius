@@ -1,16 +1,18 @@
-%ul
-  %li
-    = link_to 'Главная', products_path 
 
-%table
-  %tbody
-    %tr
-    - @products.each do |product|
-      %td
-        = image_tag product.photo.url(:thumb)
-        = link_to product.name, product
-        = link_to product.price, product 
-        .price_line
-        %span.price= number_to_currency(product.price)
-        = button_to 'Add to cart', line_items_path(product_id: product)
+.category
+  %ul
+    %li
+      = link_to 'Главная', products_path 
+
+  %table
+    %tbody
+      %tr
+      - @products.each do |product|
+        %td
+          = image_tag product.photo.url(:thumb)
+          = link_to product.name, product
+          = link_to product.price, product 
+          .price_line
+          %span.price= number_to_currency(product.price)
+          = button_to 'В корзину', line_items_path(product_id: product)
 

@@ -4,12 +4,11 @@ class ProductsController < ApplicationController
     @products = Product.all
     @categories = Category.all
     @cart = current_cart
-    @products = Product.order("name").page(params[:page]).per(6)
+    @products = Product.order("name").page(params[:page]).per(9)
   end
 
   def show
     @categories = Category.all
-    @category = Category.find(params[:id])
   end
 
   def who_bought

@@ -5,7 +5,7 @@ def create
 
 		@cart = current_cart
 		product = Product.find(params[:product_id])
-		@line_item = @cart.add_product(product.id)
+		@line_item = @cart.add_product(product.id, params[:quantity])
 
 		respond_to do |format|
 
@@ -18,4 +18,9 @@ def create
 				end
 		end
 end
+
+	def update
+		LineItem.find(params[:id]).update_attributes params[:line_item].permit(:quantity, :line_item)
+		redirect_to :back
+	end
 end
