@@ -28,8 +28,7 @@
 				- @product.photos.each do |photo|
 					%td= image_tag photo.photo.url(:thumb)
 
-		= form_tag line_items_path, method: 'POST' do
-			= hidden_field_tag 'product_id', params[:id]
-			= number_field_tag 'quantity', 1, max: 99
-			= submit_tag 'Отправить'
-
+		= form_for @line_item do |f| 
+			= f.text_field :quantity
+			= f.hidden_field :product_id, value: params[:id]
+			= f.submit 'Добавить в корзину'
