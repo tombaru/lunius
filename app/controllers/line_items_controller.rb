@@ -4,8 +4,8 @@ class LineItemsController < InheritedResources::Base
 def create
 
 		@cart = current_cart
-		product = Product.find(params[:line_item][:product_id])
-		@line_item = @cart.add_product(product.id, params[:line_item][:quantity])
+		product = Product.find(params[:product_id])
+		@line_item = @cart.add_product(product.id, params[:quantity])
 
 		respond_to do |format|
 
