@@ -1,10 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
   def index
-    @products = Product.all
     @categories = Category.all
     @cart = current_cart
-    @products = Product.order("name").page(params[:page]).per(9)
+    if params[:search]
+      @products = Product.where(name: params[:search]).page(params[:page]).per(9)
+    else
+      @products = Product.order("name").page(params[:page]).per(9)
+    end
   end
 
   def show

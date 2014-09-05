@@ -43,7 +43,11 @@
           .selection
             %span Подбор подарка
           .search
-            %span Поиск
+            %span 
+              Поиск
+              = form_tag products_path, method: :get do  
+                = text_field_tag :search
+                = submit_tag "Search"
           .news
             %span Новости
             %ul
