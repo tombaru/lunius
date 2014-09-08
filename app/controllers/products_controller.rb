@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     @categories = Category.all
     @cart = current_cart
     if params[:search]
-      @products = Product.where(name: params[:search]).page(params[:page]).per(9)
+      @products = Product.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").page(params[:page]).per(9)
     else
       @products = Product.order("name").page(params[:page]).per(9)
     end
