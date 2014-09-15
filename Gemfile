@@ -8,6 +8,8 @@ gem 'haml'
 gem 'carrierwave'
 gem 'quiet_assets', group: :development
 
+gem 'acts-as-taggable-on'
+
 gem 'mini_magick'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
