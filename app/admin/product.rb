@@ -8,25 +8,30 @@ ActiveAdmin.register Product do
   #
   # or
   #
-     form do |f|
-        f.inputs do
-        f.inputs
-          f.has_many :photos do |ff|
-            ff.input :photo
-          end
+    form do |f|
+      f.inputs do
+        f.input :name
+        f.input :tag_list, :as => :check_boxes, 
+          :collection => ActsAsTaggableOn::Tag.all.map(&:name)
+        f.input :price
+        f.input :category
+        f.input :photo
+        f.has_many :photos do |ff|
+          ff.input :photo
         end
+      end
      f.actions
-     end
+    end
 
    controller do
      def permitted_params
-       params.permit(:products => [:name, :price, :category_id, :photo, :photos])
+       params.permit(:products => [:name, :price, :category_id, :photo, :photos, :tag_list])
      end
    end
 
 
   permit_params do
-    [:name, :price, :category_id, :photo, :photos]
+    [:name, :tag_list, :price, :category_id, :photo, :photos] 
   end
 
  
