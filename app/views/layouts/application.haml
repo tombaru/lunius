@@ -42,6 +42,12 @@
         .right_menu
           .selection
             %span Подбор подарка
+            = form_tag products_path, method: :get do
+              = select_tag "search_tag", options_from_collection_for_select(ActsAsTaggableOn::Tag.all, 'id', 'name')
+              = text_field_tag "advanced_search[cost_min]" 
+              = text_field_tag "advanced_search[cost_max]"  
+              = submit_tag "Search"
+
           .search
             %span 
               Поиск

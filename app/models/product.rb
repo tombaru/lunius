@@ -8,6 +8,9 @@ class Product < ActiveRecord::Base
 	before_destroy :ensure_not_referenced_by_any_line_item
 	accepts_nested_attributes_for :photos
 
+	acts_as_taggable # Alias for acts_as_taggable_on :tags
+	acts_as_taggable_on :skills, :interests
+
 	#...
 
 	private
